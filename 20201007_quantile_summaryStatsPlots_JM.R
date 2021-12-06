@@ -36,11 +36,11 @@ dis_quant$quantile <- str_remove(dis_quant$quantile, "quan") %>%
 
 
 # Year of interest, keep this at the current year
-#yoi = 2005
+yoi = 2010
 
 quant_plot <- list() #create empty list for storing the plot
 counter = 0
-for(yoi in 2005:2020){#run for 2005 to 2020 can change this for any years
+for(yoi in 2010:2021){#run for 2005 to 2020 can change this for any years
   print(yoi)#printing out the year as a check
   counter = counter + 1 #use a counter to save the plots in a list
   #if we don't use a counter the first plot is at list2005 instead of list1
@@ -98,6 +98,6 @@ require(cowplot)
 quantile_plot_1<-plot_grid(quant2005, quant2006,quant2007,quant2008,quant2009,quant2010,quant2011,quant2012, ncol=4, labels=c("a","b","c","d","e","f","g", "h")) 
 
 require(cowplot)
-quantile_plot_2<-plot_grid(quant2013,quant2014,quant2015,quant2016,quant2017,quant2018,quant2019, quant2020, ncol=4, labels=c("i","j", "k", "l", "m", "n", "o", "p")) 
+quantile_plot_2<-plot_grid(quant2013,quant2014,quant2015,quant2016,quant2017,quant2018,quant2019, quant2020, quant2021, ncol=4, labels=c("i","j", "k", "l", "m", "n", "o", "p","q")) 
 
 #ggsave("fig/quantile_plot.png", width= 20, height=10, dpi=300)

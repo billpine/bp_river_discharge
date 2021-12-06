@@ -18,7 +18,7 @@ station = '02358000'
 stinfo  = siteInfo(station)
 
 #read entire time series
-dis   = importDVs(staid=station,code='00060',stat='00003', sdate= "1920-10-01") 
+dis   = importDVs(staid=station,code='00060',stat='00003', sdate= "1927-01-01") 
 #ok looks like temp code is wrong for this station, maybe rainfall is available?
 
 #stat codes herehttps://help.waterdata.usgs.gov/stat_code
@@ -62,8 +62,8 @@ rownames(dis_per2) <- dis_per$year
 #plot as a heat map
 require(plot.matrix)
 library(RColorBrewer)
-min(dis_mat2, na.rm = T) #-25608.03
-max(dis_mat2, na.rm = T) #133243.6
+min(dis_mat2, na.rm = T) #-25777.6
+max(dis_mat2, na.rm = T) #133074
 par(oma=c(0.5,0.5,0.5,3))
 mypallette <- brewer.pal(4, "RdBu")
 plot(dis_mat2, xlab = "Month", ylab = "Year",
