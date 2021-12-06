@@ -28,7 +28,7 @@ dis$year    = as.numeric(strftime(dis$dates,format="%Y"))
 dis$month   = as.numeric(strftime(dis$dates,format="%m")) 
 
 #make dataset from epochs, 
-disE  = dis[dis$dates>='1920-10-01' & dis$dates<='2021-10-31',]  
+disE  = dis[dis$dates>='1920-10-01' & dis$dates<='2021-11-30',]  
 
 #get monthly sum, mean, sd, and var
 #discharge
@@ -62,12 +62,12 @@ rownames(dis_per2) <- dis_per$year
 #plot as a heat map
 require(plot.matrix)
 library(RColorBrewer)
-min(dis_mat2, na.rm = T) #-16429.57
-max(dis_mat2, na.rm = T) #82483.54
+min(dis_mat2, na.rm = T) #-25608.03
+max(dis_mat2, na.rm = T) #133243.6
 par(oma=c(0.5,0.5,0.5,3))
 mypallette <- brewer.pal(4, "RdBu")
 plot(dis_mat2, xlab = "Month", ylab = "Year",
-     breaks = c(-20000, -10000, 0, 10000, 300000),
+     breaks = c(-30000, -10000, 0, 10000, 200000),
      fmt.key="%.0f",
      main = "Discharge",
      col = mypallette)
